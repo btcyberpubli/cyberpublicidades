@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Publicidades - Escala tu Casino Online sin Caídas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-weight: 600;
+            background-color: #0a1e3d;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 200, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 200, 255, 0.6); }
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(10, 30, 61, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+        }
+
+        .logo img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            border: 2px solid #0096ff;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00c8ff;
+        }
+
+        .cta-header {
+            background: linear-gradient(135deg, #00c8ff 0%, #0088ff 100%);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 200, 255, 0.3);
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            background-image: linear-gradient(135deg, rgba(9, 25, 47, 0.88), rgba(4, 17, 32, 0.82)), url('ganamos2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 40px 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 200, 255, 0.18) 0%, transparent 52%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: -10px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .platform-badge {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+            background: rgba(168, 85, 247, 0.15);
+            padding: 12px 22px;
+            border-radius: 22px;
+            border: 1px solid rgba(168, 85, 247, 0.5);
+            margin-bottom: 18px;
+            box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.1);
+        }
+
+        .platform-badge strong {
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #f3e8ff;
+        }
+
+        .platform-badge span {
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #d8b4ff;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 5vw, 7rem);
+            font-weight: 900;
+            line-height: 0.96;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 40px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00c8ff 0%, #0088ff 100%);
+            color: #000;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 200, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00c8ff;
+            border: 2px solid #00c8ff;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 200, 255, 0.1);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #00c8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* FEATURES */
+        .pilar-1 {
+            background: linear-gradient(135deg, rgba(6, 22, 42, 0.98), rgba(10, 36, 62, 0.96));
+            border-top: 1px solid rgba(0, 200, 255, 0.3);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 20px 22px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(0, 150, 255, 0.08);
+            border: 1px solid rgba(0, 200, 255, 0.38);
+            padding: 28px 22px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-align: center;
+            animation: fadeInUp 0.6s ease forwards;
+            min-height: 210px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00c8ff;
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #00c8ff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #00c8ff;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .feature-card p {
+            font-size: 0.96rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        .feature-card:hover {
+            background: rgba(0, 200, 255, 0.15);
+            border-color: rgba(0, 200, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 200, 255, 0.2);
+        }
+
+        .feature-card.highlight {
+            border-color: rgba(0, 200, 255, 0.7);
+            background: linear-gradient(135deg, rgba(0, 200, 255, 0.15) 0%, rgba(0, 150, 255, 0.08) 100%);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.18);
+            grid-column: span 1;
+            padding: 42px 30px;
+            min-height: 220px;
+        }
+
+        .feature-card.highlight h3 {
+            font-size: 1.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00c8ff;
+            margin-bottom: 15px;
+        }
+
+        .feature-card.highlight p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .feature-card.highlight:hover {
+            box-shadow: 0 0 40px rgba(0, 200, 255, 0.28);
+            transform: translateY(-4px);
+        }
+
+        /* BENEFITS */
+        .beneficios {
+            background-image: linear-gradient(135deg, rgba(5, 21, 64, 0.92), rgba(10, 38, 71, 0.88)), url('metricas.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            border-top: 1px solid rgba(0, 200, 255, 0.3);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item {
+            background: rgba(0, 150, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.25);
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .benefit-item:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-item:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(3) { animation-delay: 0.3s; }
+
+        .benefit-item:hover {
+            background: rgba(0, 200, 255, 0.18);
+            border-color: rgba(0, 200, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 200, 255, 0.2);
+        }
+
+        .benefit-item h3 {
+            font-size: 18px;
+            color: #00c8ff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .benefit-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: #00c8ff;
+        }
+
+        .benefit-item p {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* CTA FINAL */
+        .final-cta {
+            background-image: linear-gradient(135deg, rgba(5, 18, 51, 0.93), rgba(10, 30, 61, 0.89)), url('ganamos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            border-top: 2px solid rgba(0, 200, 255, 0.4);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #00c8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .final-cta .subtitle {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .final-cta button {
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #051233;
+            border-top: 1px solid rgba(0, 200, 255, 0.2);
+            padding: 40px;
+            text-align: center;
+            color: #8899bb;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+                height: 60px;
+            }
+
+            .logo img {
+                height: 40px;
+                width: 40px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 12px 30px;
+                font-size: 13px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .features-grid, .benefits-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .feature-card, .benefit-item {
+                padding: 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .final-cta h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><img src="logo.png" alt="Cyber Publicidades"></div>
+        <nav>
+            <a href="#features">Plataforma GANAMOS</a>
+            <a href="#benefits">Ventajas</a>
+            <button class="cta-header" onclick="window.open('https://wa.me/5492235524409?text=Hola%20Cyber%20Publicidades%2C%20quiero%20informaci%C3%B3n', '_blank')">Contactar</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="platform-badge">
+                <strong>PLATAFORMA GANAMOS</strong>
+                <span>Donde juega la mayoría, ganan los mejores. Sumate a la comunidad más grande de Argentina.</span>
+            </div>
+            <h1 style="font-size: 64px; line-height: 1.1; margin-bottom: 20px;">OLVÍDATE DE WHATSAPP</h1>
+            <p class="subtitle" style="font-size: 22px; color: #00c8ff; font-weight: 700; margin-bottom: 15px;">Chat Automático + Pasarela de Pagos + Gestión de Publicidad = Tu Casino Funciona Solo</p>
+            <p class="subtitle" style="font-size: 16px; color: #b0b0b0;">Integración completa que automatiza cargas, retiros, soporte 24/7 y optimiza campañas para atraer jugadores reales y rentables.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Quiero%20implementar%20GANAMOS%20en%20mi%20casino', '_blank')">Implementar GANAMOS</button>
+                <button class="btn-secondary" onclick="window.open('https://chat7.ganamoschat-adm.shop/landing4', '_blank')">Ver Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="pilar-1" id="features">
+        <div class="section-container">
+            <h2 class="section-title">Dos Pilares Que Lo Cambian Todo</h2>
+            <p class="section-subtitle">Chat automático 24/7 + Pasarela de pagos instantánea = Cero intervención manual</p>
+            
+            <div class="features-grid">
+                <!-- CHAT AUTOMÁTICO -->
+                <div class="feature-card highlight" style="grid-column: span 1;">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+                    <h3>CHAT CENTRALIZADO AUTOMÁTICO 24/7</h3>
+                    <p>Todas las consultas en un solo lugar. Cargas, retiros, soporte. La IA responde sola, los cajeros solo confirman. Cero WhatsApp, cero caos.</p>
+                </div>
+
+                <!-- PASARELA DE PAGOS -->
+                <div class="feature-card highlight" style="grid-column: span 1;">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></div>
+                    <h3>PASARELA DE PAGOS INSTANTÁNEA</h3>
+                    <p>El jugador transfiere → reporta en el chat → fichas acreditadas al instante. Automatización total sin intervención de cajeros.</p>
+                </div>
+
+                <!-- RESTANTES CARACTERÍSTICAS -->
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                    <h3>REPORTES EN TIEMPO REAL</h3>
+                    <p>Dashboard completo. Cargas, retiros, usuarios activos, ganancias en vivo.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="9" cy="9" r="1"></circle><circle cx="15" cy="9" r="1"></circle><path d="M9 15h6"></path></svg></div>
+                    <h3>GESTIÓN DE PUBLICIDAD</h3>
+                    <p>Armamos, optimizamos y administramos campañas para maximizar leads, volumen y rentabilidad real del casino.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios" id="benefits">
+        <div class="section-container">
+            <h2 class="section-title">Pocos Cajeros, Máximas Ganancias</h2>
+            <p class="section-subtitle">Automatización que te libera de intervenciones manuales constantes</p>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="20 6 9 17 4 12"></polygon></svg>Menos Personal, Más Margen</h3>
+                    <p>Con 1-2 cajeros manejas 100+ jugadores. La plataforma automática + chat IA = cero necesidad de múltiples operarios.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>Operación Segura y Limpia</h3>
+                    <p>Todo auditado, cero efectivo físico, desde casa. Discreción máxima + control total en tiempo real.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 2v10m0 0l-3-3m3 3l3-3"></path></svg>Campañas Rentables</h3>
+                    <p>Gestionamos pauta, redistribuimos presupuesto y perseguimos la mejor conversión para que cada peso trabaje más.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <div class="section-container">
+            <h2>La Plataforma GANAMOS te Espera</h2>
+            <p class="subtitle">Chat automático + Pasarela de pagos. Olvídate de WhatsApp, enfocate en escalar.</p>
+            <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Hola%20Cyber%20Publicidades%2C%20quiero%20activar%20GANAMOS%20ahora', '_blank')" style="font-size: 16px; padding: 15px 45px;">Activar GANAMOS Hoy</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Cyber Publicidades | Plataforma de Estabilidad y Gestión de Campañas</p>
+    </footer>
+
+</body>
+</html>
