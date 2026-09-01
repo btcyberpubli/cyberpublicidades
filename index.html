@@ -127,16 +127,22 @@
         .hero {
             margin-top: 70px;
             min-height: 100vh;
-            background-image: linear-gradient(135deg, rgba(9, 25, 47, 0.88), rgba(4, 17, 32, 0.82)), url('ganamos2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 30px 40px 60px;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
 
         .hero::before {
@@ -146,7 +152,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 200, 255, 0.18) 0%, transparent 52%);
+            background: linear-gradient(90deg, rgba(9, 25, 47, 0.45) 0%, rgba(9, 25, 47, 0.75) 50%, rgba(4, 17, 32, 0.95) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -634,7 +640,9 @@
 
     <!-- HERO -->
     <section class="hero">
-
+        <video class="hero-video" autoplay muted loop playsinline poster="ganamos2.jpg">
+            <source src="BANNER.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px;">OLVÍDATE DE <span style="color: #ffd700;">LAS CAIDAS</span> WHATSAPP</h1>
             <img src="logo.png" alt="GANAMOS" class="hero-logo">
