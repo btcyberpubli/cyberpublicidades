@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Publicidades - Escala tu Casino Online sin Caídas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,7 +17,7 @@
         }
 
         body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Oswald', 'Arial', 'Helvetica', sans-serif;
             font-weight: 600;
             background-color: #0a1e3d;
             color: #ffffff;
@@ -45,6 +46,22 @@
             50% { box-shadow: 0 0 40px rgba(0, 200, 255, 0.6); }
         }
 
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 200, 255, 0.5), 0 0 40px rgba(0, 200, 255, 0.3);
+                text-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 200, 255, 0.7), 0 0 60px rgba(0, 200, 255, 0.5);
+                text-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+            }
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(0, 200, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(0, 200, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5); }
+        }
+
         /* HEADER */
         header {
             position: fixed;
@@ -63,9 +80,10 @@
 
         .logo img {
             height: 45px;
-            width: 45px;
-            border-radius: 50%;
-            border: 2px solid #0096ff;
+            width: auto;
+            max-width: 150px;
+            border-radius: 0;
+            border: none;
             animation: pulse 3s ease-in-out infinite;
         }
 
@@ -78,9 +96,10 @@
         nav a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 0.8125rem;
             font-weight: 500;
             transition: color 0.3s ease;
+            font-family: 'Oswald', sans-serif;
         }
 
         nav a:hover {
@@ -93,7 +112,7 @@
             padding: 8px 20px;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 0.75rem;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -141,28 +160,42 @@
             animation: fadeInUp 0.8s ease;
         }
 
+        .hero-logo {
+            height: 90px;
+            width: auto;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+        }
+
         .platform-badge {
-            display: inline-flex;
+            display: none;
+        }
+
+        .badge-logo {
+            height: 40px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .badge-text {
+            display: flex;
             flex-direction: column;
             gap: 4px;
-            background: rgba(168, 85, 247, 0.15);
-            padding: 12px 22px;
-            border-radius: 22px;
-            border: 1px solid rgba(168, 85, 247, 0.5);
-            margin-bottom: 18px;
-            box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.1);
         }
 
         .platform-badge strong {
-            font-size: 12px;
+            font-size: 0.75rem;
             letter-spacing: 1px;
             font-weight: 800;
             text-transform: uppercase;
             color: #f3e8ff;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.2), 0.5px 0.5px 0 rgba(0, 0, 0, 0.3);
         }
 
         .platform-badge span {
-            font-size: 10px;
+            font-size: 0.625rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             color: #d8b4ff;
@@ -177,10 +210,17 @@
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: -3px;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 215, 0, 0.2);
+        }
+
+        .hero h1 span {
+            color: #ffd700;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 215, 0, 0.15);
         }
 
         .hero .subtitle {
-            font-size: 18px;
+            font-size: 1.125rem;
             color: #b0b0b0;
             line-height: 1.6;
             margin-bottom: 40px;
@@ -195,7 +235,7 @@
 
         .btn-primary, .btn-secondary {
             padding: 15px 40px;
-            font-size: 15px;
+            font-size: 0.9375rem;
             font-weight: 700;
             border-radius: 4px;
             cursor: pointer;
@@ -209,12 +249,14 @@
         .btn-primary {
             background: linear-gradient(135deg, #00c8ff 0%, #0088ff 100%);
             color: #000;
-            animation: fadeInUp 0.8s ease 0.1s both;
+            animation: fadeInUp 0.8s ease 0.1s both, glowPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.5), 0 0 40px rgba(0, 200, 255, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 200, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.8), 0 0 50px rgba(0, 200, 255, 0.5), 0 20px 40px rgba(0, 200, 255, 0.4);
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
         }
 
         .btn-secondary {
@@ -236,18 +278,20 @@
         }
 
         .section-title {
-            font-size: 40px;
+            font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 15px;
+            font-family: 'Oswald', sans-serif;
             background: linear-gradient(135deg, #ffffff 0%, #00c8ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(-1px -1px 0 rgba(255, 255, 255, 0.2)) drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
         }
 
         .section-subtitle {
-            font-size: 16px;
+            font-size: 1rem;
             text-align: center;
             color: #b0b0b0;
             margin-bottom: 50px;
@@ -346,6 +390,8 @@
             font-weight: 900;
             text-transform: uppercase;
             line-height: 1.25;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.15), 0.5px 0.5px 0 rgba(0, 0, 0, 0.3);
         }
 
         .feature-card p {
@@ -377,6 +423,8 @@
             letter-spacing: 1px;
             color: #00c8ff;
             margin-bottom: 15px;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.4);
         }
 
         .feature-card.highlight p {
@@ -428,13 +476,15 @@
         }
 
         .benefit-item h3 {
-            font-size: 18px;
+            font-size: 1.125rem;
             color: #00c8ff;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.15), 0.5px 0.5px 0 rgba(0, 0, 0, 0.3);
         }
 
         .benefit-item svg {
@@ -444,7 +494,7 @@
         }
 
         .benefit-item p {
-            font-size: 14px;
+            font-size: 0.875rem;
             color: #b0b0b0;
             line-height: 1.6;
         }
@@ -461,18 +511,20 @@
         }
 
         .final-cta h2 {
-            font-size: 42px;
+            font-size: 2.625rem;
             font-weight: 800;
             margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
             background: linear-gradient(135deg, #ffffff 0%, #00c8ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: fadeInUp 0.8s ease;
+            filter: drop-shadow(-1px -1px 0 rgba(255, 255, 255, 0.2)) drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
         }
 
         .final-cta .subtitle {
-            font-size: 16px;
+            font-size: 1rem;
             color: #b0b0b0;
             margin-bottom: 40px;
             animation: fadeInUp 0.8s ease 0.1s both;
@@ -489,7 +541,7 @@
             padding: 40px;
             text-align: center;
             color: #8899bb;
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
 
         /* RESPONSIVE */
@@ -514,11 +566,11 @@
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 2rem;
             }
 
             .hero .subtitle {
-                font-size: 15px;
+                font-size: 0.9375rem;
             }
 
             .hero-buttons {
@@ -529,7 +581,7 @@
             .btn-primary, .btn-secondary {
                 width: 100%;
                 padding: 12px 30px;
-                font-size: 13px;
+                font-size: 0.8125rem;
             }
 
             section {
@@ -537,7 +589,7 @@
             }
 
             .section-title {
-                font-size: 28px;
+                font-size: 1.75rem;
             }
 
             .features-grid, .benefits-list {
@@ -550,21 +602,21 @@
             }
 
             .final-cta h2 {
-                font-size: 28px;
+                font-size: 1.75rem;
             }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 24px;
+                font-size: 1.5rem;
             }
 
             .section-title {
-                font-size: 24px;
+                font-size: 1.5rem;
             }
 
             .final-cta h2 {
-                font-size: 22px;
+                font-size: 1.375rem;
             }
         }
     </style>
@@ -572,11 +624,11 @@
 <body>
     <!-- HEADER -->
     <header>
-        <div class="logo"><img src="logo.png" alt="Cyber Publicidades"></div>
+        <div class="logo"><img src="logo.png" alt="GANAMOS"></div>
         <nav>
             <a href="#features">Plataforma GANAMOS</a>
             <a href="#benefits">Ventajas</a>
-            <button class="cta-header" onclick="window.open('https://wa.me/5492235524409?text=Hola%20Cyber%20Publicidades%2C%20quiero%20informaci%C3%B3n', '_blank')">Contactar</button>
+            <button class="cta-header" onclick="window.open('https://wa.me/5494409?text=Hola%20Cyber%20Publicidades%2C%20quiero%20informaci%C3%B3n', '_blank')">Contactar</button>
         </nav>
     </header>
 
@@ -584,16 +636,12 @@
     <section class="hero">
 
         <div class="hero-content">
-            <div class="platform-badge">
-                <strong>PLATAFORMA GANAMOS</strong>
-                <span>Donde juega la mayoría, ganan los mejores. Sumate a la comunidad más grande de Argentina.</span>
-            </div>
-            <h1 style="font-size: 64px; line-height: 1.1; margin-bottom: 20px;">OLVÍDATE DE WHATSAPP</h1>
-            <p class="subtitle" style="font-size: 22px; color: #00c8ff; font-weight: 700; margin-bottom: 15px;">Chat Automático + Pasarela de Pagos + Gestión de Publicidad = Tu Casino Funciona Solo</p>
-            <p class="subtitle" style="font-size: 16px; color: #b0b0b0;">Integración completa que automatiza cargas, retiros, soporte 24/7 y optimiza campañas para atraer jugadores reales y rentables.</p>
-            <p class="subtitle" style="font-size: 14px; color: #ffd700; font-weight: 700; margin: 20px 0 25px;">✓ Mínimo net win mensual: $60 millones | Casinos escalables y rentables</p>
+            <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px;">OLVÍDATE DE <span style="color: #ffd700;">LAS CAIDAS</span> WHATSAPP</h1>
+            <img src="logo.png" alt="GANAMOS" class="hero-logo">
+            <p class="subtitle" style="font-size: 1.875rem; color: #00c8ff; font-weight: 700; margin-bottom: 15px;">PLATAFORMA AUTOMATIZADA + PASARELA DE PAGOS + GESTION DE PUBLICIDAD <br> <span style="color: #f8f3f3;">TODO EN UN SISTEMA</span></p>
+            <p class="subtitle" style="font-size: 1.175rem; color: #ffd700; font-weight: 700; margin: 20px 0 25px;">✓ Mínimo net win mensual: $60 millones | Casinos escalables y rentables</p>
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Quiero%20implementar%20GANAMOS%20en%20mi%20casino', '_blank')">Implementar GANAMOS</button>
+                <button class="btn-primary" onclick="window.open('https://wa.me/54924409?text=Quiero%20implementar%20GANAMOS%20en%20mi%20casino', '_blank')">ASISTENCIA INMEDIATA</button>
                 <button class="btn-secondary" onclick="window.open('https://chat7.ganamoschat-adm.shop/landing4', '_blank')">Ver Demo</button>
             </div>
         </div>
@@ -606,14 +654,14 @@
         </video>
         <div class="section-container">
             <h2 class="section-title">La Solución Completa Para Tu Casino</h2>
-            <p class="section-subtitle">Todo lo que necesitas para escalar en una única plataforma</p>
+            <p class="section-subtitle">Todo lo que necesitas para escalar en una <strong style="color: #00c8ff;">ÚNICA PLATAFORMA</strong></p>
             
             <div class="features-grid">
                 <!-- CHAT INTERNO -->
                 <div class="feature-card">
                     <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
                     <h3>CHAT <span style="color: #ffd700;">INTERNO</span></h3>
-                    <p>Comunicación rápida y directa con cada jugador dentro de tu propia plataforma, podrás enviarle mensajes directos incluso cuando no esté dentro de la plataforma</p>
+                    <p>Comunicación directa con tus jugadores en la plataforma. Mensajes instantáneos y disponible 24/7.</p>
                 </div>
 
                 <!-- PUBLICIDAD DIRECTO -->
@@ -644,11 +692,11 @@
                     <p>Datos en tiempo real de usuarios, movimientos e ingresos para tomar mejores decisiones.</p>
                 </div>
 
-                <!-- NOTIFICACIONES PUSH -->
+                <!-- SEGURIDAD ANTIFRAUDE -->
                 <div class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-                    <h3>NOTIFICACIONES PUSH <span style="color: #ffd700;">UN MENSAJE DIRECTO AL CELULAR</span></h3>
-                    <p>Contacta al cliente con promos y anuncios para que nunca pierda contacto contigo</p>
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <h3>SEGURIDAD <span style="color: #ffd700;">ANTIFRAUDE</span></h3>
+                    <p>Protección avanzada contra fraudes y duplicación de cuentas. Tu dinero siempre seguro.</p>
                 </div>
             </div>
         </div>
@@ -683,8 +731,8 @@
     <section class="final-cta">
         <div class="section-container">
             <h2>La Plataforma GANAMOS te Espera</h2>
-            <p class="subtitle">Chat automático + Pasarela de pagos. Olvídate de WhatsApp, enfocate en escalar.</p>
-            <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Hola%20Cyber%20Publicidades%2C%20quiero%20activar%20GANAMOS%20ahora', '_blank')" style="font-size: 16px; padding: 15px 45px;">Activar GANAMOS Hoy</button>
+            <p class="subtitle">¿Se te caen tus principales? Ganamos retiene jugadores con automatización inteligente 24/7.</p>
+            <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Hola%20Cyber%20Publicidades%2C%20quiero%20activar%20GANAMOS%20ahora', '_blank')" style="font-size: 1rem; padding: 15px 45px;">Activar GANAMOS Hoy</button>
         </div>
     </section>
 
