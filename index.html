@@ -129,13 +129,14 @@
             bottom: 0;
             background: radial-gradient(circle at 20% 50%, rgba(0, 200, 255, 0.18) 0%, transparent 52%);
             pointer-events: none;
+            z-index: 1;
         }
 
         .hero-content {
             max-width: 1200px;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
             margin-top: -10px;
             animation: fadeInUp 0.8s ease;
         }
@@ -262,8 +263,35 @@
 
         /* FEATURES */
         .pilar-1 {
-            background: linear-gradient(135deg, rgba(6, 22, 42, 0.98), rgba(10, 36, 62, 0.96));
+            position: relative;
+            overflow: hidden;
             border-top: 1px solid rgba(0, 200, 255, 0.3);
+        }
+
+        .pilar-1-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .pilar-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(6, 22, 42, 0.9), rgba(10, 36, 62, 0.85));
+            z-index: 1;
+        }
+
+        .pilar-1 .section-container {
+            position: relative;
+            z-index: 2;
         }
 
         .features-grid {
@@ -554,6 +582,7 @@
 
     <!-- HERO -->
     <section class="hero">
+
         <div class="hero-content">
             <div class="platform-badge">
                 <strong>PLATAFORMA GANAMOS</strong>
@@ -572,6 +601,9 @@
 
     <!-- CARACTERÍSTICAS -->
     <section class="pilar-1" id="features">
+        <video class="pilar-1-video" autoplay muted loop playsinline poster="ganamos2.jpg">
+            <source src="video.mp4" type="video/mp4">
+        </video>
         <div class="section-container">
             <h2 class="section-title">La Solución Completa Para Tu Casino</h2>
             <p class="section-subtitle">Todo lo que necesitas para escalar en una única plataforma</p>
